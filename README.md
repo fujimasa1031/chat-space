@@ -13,20 +13,6 @@ Things you may want to cover:
 
 * Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-|Column|Type|Options|
-|------|----|-------|
-
-
 # DB設計
 ## users_table
 |Column|Type|Options|
@@ -47,7 +33,6 @@ Things you may want to cover:
 ### Association
 - has_many :users, though :members
 - has_many :members
-- accepts_nested_attributes_for :members
 - has_many :messages
 
 ## messages_table
@@ -71,3 +56,16 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+|Column|Type|Options|
+|------|----|-------|
