@@ -53,12 +53,10 @@ Things you may want to cover:
 ## messages_table
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: nil[^1]|
-|image|string|null: nil[^1]|
-|user_id|string|null: false|
-|group_id|string|null: false|
-
-[^1]:両方ともnullの場合はfalseとする
+|body|text|null: nil|
+|image|string|null: nil|
+|user_id|integer|null: false|
+|group_id|integer|null: false|
 
 ### Association
 - belongs_to :user
@@ -67,8 +65,8 @@ Things you may want to cover:
 ## menbers_table
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true, index: true|
-|group_id|references|null: false, foreign_key: true, index: true|
+|user_id|integer|null: false, foreign_key: true, index: true|
+|group_id|integer|null: false, foreign_key: true, index: true|
 
 ### Association
 - belongs_to :group
