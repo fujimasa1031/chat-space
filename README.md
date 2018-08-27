@@ -21,9 +21,9 @@ Things you may want to cover:
 |email|string|null: false, unique: true|
 
 ### Association
-- has_many :groups, though :members
-- has_many :members
 - has_many :messages
+- has_many :members
+- has_many :groups, though :members
 
 ## groups_table
 |Column|Type|Options|
@@ -31,17 +31,18 @@ Things you may want to cover:
 |name|string|null: false, unique: true|
 
 ### Association
-- has_many :users, though :members
-- has_many :members
 - has_many :messages
+- has_many :members
+- has_many :users, though :members
+
 
 ## messages_table
 |Column|Type|Options|
 |------|----|-------|
 |body|text|null: nil|
 |image|string|null: nil|
-|user_id|references|null: false, foreign_key: true, index: true|
-|group_id|references|null: false, foreign_key: true, index: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -50,8 +51,8 @@ Things you may want to cover:
 ## menbers_table
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true, index: true|
-|group_id|references|null: false, foreign_key: true, index: true|
+|user_id|references|null: false, foreign_key: true|
+|group_id|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
