@@ -39,8 +39,8 @@ Things you may want to cover:
 ## messages_table
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: nil|
-|image|string|null: nil|
+|body|text||
+|image|string||
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
 
