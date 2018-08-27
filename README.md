@@ -25,3 +25,51 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
+
+
+# DB設計
+## users_table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+
+### Association
+- has_many :groups, though :members
+- has_many :members
+- has_many :messages
+
+## groups_table
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+
+### Association
+- has_many :users, though :members
+- has_many :members
+- accepts_nested_attributes_for :members
+- has_many :messages
+
+## messages_table
+|Column|Type|Options|
+|------|----|-------|
+|body|text|null: nil[^1]|
+|image|string|null: nil[^1]|
+|user_id|string|null: false|
+|group_id|string|null: false|
+
+[^1]:両方ともnullの場合はfalseとする
+
+### Association
+- belongs_to :user
+- belongs_to :group
+
+## menbers_table
+|Column|Type|Options|
+|------|----|-------|
+|user_id|references|null: false, foreign_key: true, index: true|
+|group_id|references|null: false, foreign_key: true, index: true|
+
+### Association
+- belongs_to :group
+- belongs_to :user
