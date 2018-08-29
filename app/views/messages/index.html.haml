@@ -3,12 +3,64 @@
   %head
     %meta{charset: "utf-8"}
 
-  %body
-    %div{class: "chat-side"}
-      %div{class: "chat-side__user"}
-      %div{class: "chat-side__groups"}
+  .wrapper
+    = render "chat-side"
 
-    %div{class: "chat-main"}
-      %div{class: "chat-main__header"}
-      %div{class: "chat-main__body"}
-      %div{class: "chat-main__footer"}
+    .chat
+      .header
+        .header__title
+          サンプルグループ
+        %ul.members
+          Member:
+          %ul.menber
+            メンバー1
+          %ul.menber
+            メンバー2
+          %ul.menber
+            メンバー3
+        .header__button
+          Edit
+
+      .messages
+        .message
+          .top-message
+            .top-message__user-name
+              サンプルユーザー
+            .top-message__date
+              2018/08/29 12:00
+          .bottom-message
+            .bottom-message__text
+              サンプル投稿です。
+        .message
+          .top-message
+            .top-message__user-name
+              サンプルユーザー
+            .top-message__date
+              2018/08/29 12:00
+          .bottom-message
+            .bottom-message__text
+              サンプル投稿です。
+        .message
+          .top-message
+            .top-message__user-name
+              サンプルユーザー
+            .top-message__date
+              2018/08/29 12:00
+          .bottom-message
+            .bottom-message__text
+              サンプル投稿です。
+        .message
+          .top-message
+            .top-message__user-name
+              サンプルユーザー
+            .top-message__date
+              2018/08/29 12:00
+          .bottom-message
+            .bottom-message__text
+              サンプル投稿です。
+
+      .footer
+        %form
+          %input
+          .button
+            SEND

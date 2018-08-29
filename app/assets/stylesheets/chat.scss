@@ -1,0 +1,22 @@
+.chat{
+  width: calc(100%-300px);
+  .header{
+    border-bottom: 1px solid #eeeeee;
+  }
+}
+
+
+
+
+.message{
+  background-color: #38AEF0;
+  box-sizing: border-box;
+  padding: 0  40px;
+  .top-message
+    .top-message__user-name
+      サンプルユーザー
+    .top-message__date
+      2018/08/29 12:00
+    .bottom-message
+    .bottom-message__text
+}
