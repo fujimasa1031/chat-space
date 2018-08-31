@@ -3,7 +3,20 @@ $WhiteColor: #ffffff;
 $mainTextColor: #434a54;
 $mainGroupColor: #333333;
 $mainSubTextColor: #999999;
+$mainBorderColor: #eeeeee;
 
 .chat-main{
   background-color: red;
+  width: calc(100vw-300px);
+  height: 100vh;
+  .header{
+    border-bottom: 1px solid $mainBorderColor;
+    .header__title{
+      padding: 40px;
+      .header__title-name{
+        font-size:20px;
+        color: $mainGroupColor;
+      }
+    }
+  }
 }
