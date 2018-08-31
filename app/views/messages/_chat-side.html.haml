@@ -1,22 +1,36 @@
-.chat-side
-  .header
-    %h3.chat-side__user
-      サンプルユーザー
-    %ul
-      %li.list
-        
 
 
-  .groups
-    .group
-      .group__name hoge1
-      .group__message これはサンプルです。
-    .group
-      .group__name hoge2
-      .group__message これはサンプルです。
-    .group
-      .group__name hoge3
-      .group__message これはサンプルです。
-    .group
-      .group__name hoge4
-      .group__message これはサンプルです。
+
+%div.chat-side
+  %div.header
+    %div.chat-side__user
+      %div.chat-side__user-name
+        ユーザー名称
+      .chat-side__user--new-group
+        %i.fa.fa-pencil-square-o
+      .chat-side__user--edit-user
+        %i.fa.fa-cog
+
+  %div.groups
+
+    %div.chat-side__group
+      %div.chat-side__group--name
+        グループ名-hoge-
+      %div.chat-side__group--message
+        最新コメント-hoge-
+    %div.chat-side__group
+      %div.chat-side__group--name
+        グループ名-hoge-
+      %div.chat-side__group--message
+        最新コメント-hoge-
+    %div.chat-side__group
+      %div.chat-side__group--name
+        グループ名-hoge-
+      %div.chat-side__group--message
+        最新コメント-hoge-
+    %div.chat-side__group
+      %div.chat-side__group--name
+        グループ名-hoge-
+      %div.chat-side__group--message
+        最新コメント-hoge-
+
