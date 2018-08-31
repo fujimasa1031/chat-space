@@ -4,19 +4,54 @@ $mainTextColor: #434a54;
 $mainGroupColor: #333333;
 $mainSubTextColor: #999999;
 $mainBorderColor: #eeeeee;
+$ButtonColor: #38aef0;
 
-.chat-main{
-  background-color: red;
+.wrapper{
+  .chat-main{
+  background-color: red; //$mainColor
   width: calc(100vw-300px);
   height: 100vh;
+  position: relative;
   .header{
     border-bottom: 1px solid $mainBorderColor;
-    .header__title{
-      padding: 40px;
-      .header__title-name{
+    &__title{
+      padding: 35px 40px 15px;
+      &__title-name{
         font-size:20px;
         color: $mainGroupColor;
       }
+      &__title-member{
+        font-size: 12px;
+        color: $mainSubTextColor;
+      }
     }
+  }
+  .messages{
+    .message{
+      color: $mainTextColor;
+      padding: 40px;
+      &__user-name{
+        font-size: 16px;
+        float: left;
+        margin: 0 10px 10px 0;
+      }
+      &__date{
+        font-size: 12px;
+        color: $mainSubTextColor;
+        float: left;
+      }
+      &__bottom-message{
+        font-size: 14px;
+        clear: both;
+      }
+    }
+    }
+  }
+  .footer{
+    background-color: $sideHeaderColor;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
   }
 }

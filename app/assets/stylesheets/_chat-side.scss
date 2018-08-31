@@ -1,12 +1,10 @@
 
-
-
 .chat-side{
   background-color: $sidemainColor;
   color: $WhiteColor;
   width: 300px;
-  float: left;
   height: 100vh;
+  // float: left;
   .header{
     background-color: $sideHeaderColor;
     padding: 35px 20px;
@@ -19,10 +17,10 @@
     .chat-side__group{
       display: block;
       padding: 20px;
-      .chat-side__group--name{
+      &__group--name{
         font-size: 15px;
       }
-      .chat-side__group--message{
+      &__group--message{
         font-size: 11px;
       }
     }
