@@ -6,9 +6,9 @@ $mainSubTextColor: #999999;
 $mainBorderColor: #eeeeee;
 $ButtonColor: #38aef0;
 
-.wrapper{
-  .chat-main{
-  background-color: red; //$mainColor
+.chat-main{
+  overflow: hidden;
+  background-color: $mainBackColor;
   width: calc(100vw-300px);
   height: 100vh;
   position: relative;
@@ -48,10 +48,20 @@ $ButtonColor: #38aef0;
     }
   }
   .footer{
-    background-color: $sideHeaderColor;
+    background-color: #B8C3C7;
     position: absolute;
     bottom: 0;
     right: 0;
     left: 0;
+    height: 90px;
+    width: 100%;
+    .chat-main__footer-form{
+      padding: 20px 40px;
+      &__footer-body{
+        &__footer-input{
+          height: 50px;
+          width: 100%;
+        }
+      }
+    }
   }
-}

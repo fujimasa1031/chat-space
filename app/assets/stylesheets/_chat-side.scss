@@ -4,13 +4,17 @@
   color: $WhiteColor;
   width: 300px;
   height: 100vh;
-  // float: left;
+  float: left;
   .header{
     background-color: $sideHeaderColor;
     padding: 35px 20px;
     .chat-side__user{
       font-size: 16px;
       font-weight: bold;
+      .chat-side__user--new-group{
+      }
+      .chat-side__user--edit-user{
+      }
     }
   }
   .groups{
