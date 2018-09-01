@@ -11,9 +11,12 @@
     .chat-side__user{
       font-size: 16px;
       font-weight: bold;
-      .chat-side__user--new-group{
-      }
-      .chat-side__user--edit-user{
+      &__user-btn{
+        float: right;
+        &__user--new-group{
+        }
+        &__user--edit-user{
+        }
       }
     }
   }
