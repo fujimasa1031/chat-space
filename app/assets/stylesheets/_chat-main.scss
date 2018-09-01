@@ -27,6 +27,7 @@ $ButtonColor: #38aef0;
     }
   }
   .messages{
+     // @include clearfix();
     .message{
       color: $mainTextColor;
       padding: 40px;
@@ -40,9 +41,8 @@ $ButtonColor: #38aef0;
         color: $mainSubTextColor;
         float: left;
       }
-      &__bottom-message{
+      &message__bottom-message{
         font-size: 14px;
-        clear: both;
       }
     }
     }
