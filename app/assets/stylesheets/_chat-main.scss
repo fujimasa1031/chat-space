@@ -1,11 +1,3 @@
-// text¥_color
-$WhiteColor: #ffffff;
-$mainTextColor: #434a54;
-$mainGroupColor: #333333;
-$mainSubTextColor: #999999;
-$mainBorderColor: #eeeeee;
-$ButtonColor: #38aef0;
-
 .chat-main{
   overflow: hidden;
   background-color: $mainBackColor;
@@ -27,7 +19,6 @@ $ButtonColor: #38aef0;
     }
   }
   .messages{
-     @include clearfix();
     .message{
       color: $mainTextColor;
       padding: 40px;
