@@ -27,7 +27,7 @@ $ButtonColor: #38aef0;
     }
   }
   .messages{
-     // @include clearfix();
+     @include clearfix();
     .message{
       color: $mainTextColor;
       padding: 40px;
