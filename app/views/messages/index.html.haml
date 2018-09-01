@@ -44,8 +44,6 @@
       .footer
         %form.chat-main__footer-form
           .chat-main__footer-body
-            %input.chat-main__footer-input
-              .button
-                SEND
-
-
+            %input.chat-main__footer-input{ :placeholder => "type a message" }
+            %i.fa.fa-image
+            %input.submit{ :type => "submit", :value => "send"}
