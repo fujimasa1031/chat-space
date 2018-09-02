@@ -1,9 +1,8 @@
 @import "./reset";  //リセットscssの読み込み
-@import "./variable.scss";
+@import "./variable";
 @import "font-awesome";
-@import "./message.scss";
-@import "./clearfix";
-
+@import "./mixin";
+@import "./message"
 
 /*
  *= require font-awesome
