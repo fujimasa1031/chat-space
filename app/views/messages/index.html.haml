@@ -2,49 +2,5 @@
 %html{lang: "ja"}
   %head
     %meta{charset: "utf-8"}
-
-  .wrapper
-    = render "chat-side"
-    .chat-main
-      .header
-        .header__title
-          .header__title-name
-            サンプルグループ
-          .header__title-member
-            Member:
-
-
-      .messages
-        .message.clearfix
-          .message__user-name
-            サンプルユーザー
-          .message__date
-            2018/08/29 12:00
-          .message__bottom-message
-            サンプル投稿です。
-          .message__bottom-image
-        .message.clearfix
-          .message__user-name
-            サンプルユーザー
-          .message__date
-            2018/08/29 12:00
-          .message__bottom-message
-            サンプル投稿です。
-          .message__bottom-image
-        .message.clearfix
-          .message__user-name
-            サンプルユーザー
-          .message__date
-            2018/08/29 12:00
-          .message__bottom-message
-            サンプル投稿です。
-          .message__bottom-image
-
-
-
-      .footer
-        %form.chat-main__footer-form
-          .chat-main__footer-body
-            %input.chat-main__footer-input{ :placeholder => "type a message" }
-            %i.fa.fa-image
-            %input.submit{ :type => "submit", :value => "send"}
+  %body
+    = render "message"
