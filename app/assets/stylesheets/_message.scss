@@ -63,10 +63,17 @@
       .chat-main__messages-list{
         .chat-main__message{
           .chat-main__message-name{
+            font-size: 16px;
+            font-weight: bold;
+            color: $mainTextColor;
           }
           .chat-main__message-time{
+            font-size: 12px;
+            color: $mainSubTextColor;
           }
           .chat-main__message-text{
+            font-size: 14px;
+            color: $mainTextColor;
           }
           .chat-main__message-image{
           }
