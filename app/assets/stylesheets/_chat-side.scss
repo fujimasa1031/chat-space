@@ -1,0 +1,40 @@
+.chat-side{
+    width: 300px;
+    height: 100vh;
+    background-color: $sidemainColor;
+    color: $WhiteColor;
+    float: left;
+    &__user{
+      background-color: $sideHeaderColor;
+      padding: 35px 20px 0;
+      height: 60px;
+      &-name{
+        font-weight: bold;
+        font-size: 16px;
+        float: left;
+      }
+      .chat-side__icon{
+        float: right;
+        &--new-group{
+          float:left;
+        }
+        &--edit-user{
+          float:left;
+        }
+      }
+    }
+    .chat-side__groups{
+      &-list{
+        .chat-side__group{
+          padding: 20px;
+          &-name{
+            font-size: 15px;
+            padding-bottom: 5px;
+          }
+          &-message{
+            font-size: 11px;
+          }
+        }
+      }
+    }
+  }
