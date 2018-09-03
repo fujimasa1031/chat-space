@@ -62,20 +62,26 @@
     .chat-main__messages{
       .chat-main__messages-list{
         .chat-main__message{
+          padding: 40px;
           .chat-main__message-name{
             font-size: 16px;
             font-weight: bold;
             color: $mainTextColor;
+            float: left;
+            padding: 6px 10px 0px 0px;
           }
           .chat-main__message-time{
             font-size: 12px;
             color: $mainSubTextColor;
+            float: left;
           }
           .chat-main__message-text{
             font-size: 14px;
             color: $mainTextColor;
+            clear: both;
           }
           .chat-main__message-image{
+            clear: both;
           }
         }
       }
@@ -87,7 +93,13 @@
       width: 100vw;
       .chat-main__footer-form{
         @include clearfix;
-        padding: 20px 40px ;
+        width: 100vw;
+        margin: 0 40px;
+        .message{
+          font-size: 16px;
+          color: $mainTextColor;
+          margin-left: 10px;
+        }
       }
     }
   }
