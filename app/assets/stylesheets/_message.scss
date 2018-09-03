@@ -34,12 +34,54 @@
     }
   }
   .chat-main{
-    width: calc(100vw-300px);
-    overflow: hidden;
-    background-color: #a4a4a4;
+    width: calc( 100vw - 300px );
     height: 100vh;
+    float: left;
     .chat-main__header{
       border-bottom: 1px solid $mainBorderColor;
+      .chat-main__header--group{
+        padding: 35px 40px 0px;
+        .chat-main__header--group-name{
+          font-size: 20px;
+          color: $mainGroupColor;
+          padding-bottom: 15px;
+          input.chat-main__header--group-edit-btn{
+            float: right;
+            margin: 0 20px;
+            height: 40px;
+
+          }
+          .chat-main__header--group-member{
+            color: $mainSubTextColor;
+            font-size: 12px;
+            border: 1px solid $flash_buttonColor;
+          }
+        }
+      }
+    }
+    .chat-main__messages{
+      .chat-main__messages-list{
+        .chat-main__message{
+          .chat-main__message-name{
+          }
+          .chat-main__message-time{
+          }
+          .chat-main__message-text{
+          }
+          .chat-main__message-image{
+          }
+        }
+      }
+    }
+    .chat-main__footer{
+      background-color: $mainBackColor;
+      position: fixed;
+      bottom: 0;
+      width: 100vw;
+      .chat-main__footer-form{
+        @include clearfix;
+        padding: 20px 40px ;
+      }
     }
   }
 }

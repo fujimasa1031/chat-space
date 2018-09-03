@@ -12,27 +12,26 @@
       .chat-side__groups-list
         .chat-side__group
           .chat-side__group-name
-            User1
+            Group1
           .chat-side__group-message
-            Message1
+            Message
         .chat-side__group
           .chat-side__group-name
-            User2
+            Group2
           .chat-side__group-message
-            Message2
+            Message
         .chat-side__group
           .chat-side__group-name
-            User2
+            Group3
           .chat-side__group-message
-            Message2
+            Message
 
   .chat-main
     .chat-main__header
       .chat-main__header--group
         .chat-main__header--group-name
           GroupName
-          .chat-main__header--group-edit-btn
-            =link_to {valu="Edit"}
+          %input.chat-main__header--group-edit-btn{:type => "submit", :value => "Edit"}
         .chat-main__header--group-member
           MEMBER: user1 | user2
     .chat-main__messages
@@ -44,4 +43,10 @@
             yyyy/mm/dd xx:xx:xx
           .chat-main__message-text
             this is sample web page !!
+          .chat-main__message-image
     .chat-main__footer
+      .chat-main__footer-form
+        %input.message{ :placeholder => "type a message"}
+          %label.upload-label{for: "upload-icon"}
+            %i.fa.fa-picture-o
+        %input.submit{:type => "submit", :value => "SEND"}
