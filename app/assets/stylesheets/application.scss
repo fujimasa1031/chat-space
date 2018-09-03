@@ -1,1 +1,7 @@
-@import "./reset";
+@import "./reset";  //リセットscssの読み込み
+@import "./variable";
+@import "font-awesome";
+@import "./mixin";
+@import "./message";
+@import "./chat-side";
+@import "./user"
