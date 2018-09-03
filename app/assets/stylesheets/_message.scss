@@ -1,85 +1,53 @@
 .wrapper{
   @include clearfix;
-  .chat-side{
-    width: 300px;
-    height: 100vh;
-    background-color: $sidemainColor;
-    color: $WhiteColor;
-    float: left;
-    .chat-side__user{
-      background-color: $sideHeaderColor;
-      padding: 20px;
-      .chat-side__user-name{
-        font-weight: bold;
-        font-size: 16px;
-      }
-      .chat-side__user-new-group{
-      }
-      .chat-side__user--edit-user{
-      }
-    }
-    .chat-side__groups{
-      .chat-side__groups-list{
-        .chat-side__group{
-          padding: 20px;
-          .chat-side__group-name{
-            font-size: 15px;
-            padding-bottom: 5px;
-          }
-          .chat-side__group-message{
-            font-size: 11px;
-          }
-        }
-      }
-    }
-  }
   .chat-main{
     width: calc( 100vw - 300px );
     height: 100vh;
     float: left;
-    .chat-main__header{
+    &__header{
       border-bottom: 1px solid $mainBorderColor;
-      .chat-main__header--group{
+      &--group{
         padding: 35px 40px 0px;
-        .chat-main__header--group-name{
+        &-name{
           font-size: 20px;
           color: $mainGroupColor;
           padding-bottom: 15px;
-          input.chat-main__header--group-edit-btn{
+          .chat-main__header--group-edit-btn{
             float: right;
             height: 40px;
             width: 100px;
-          }
-          .chat-main__header--group-member{
-            color: $mainSubTextColor;
-            font-size: 12px;
-            border: 1px solid $flash_buttonColor;
+            color: $btnColor;
+            border: 1px solid $btnColor;
           }
         }
+        &-member{
+            color: $mainSubTextColor;
+            font-size: 12px;
+          }
       }
     }
     .chat-main__messages{
-      .chat-main__messages-list{
+      &-list{
         .chat-main__message{
           padding: 40px;
-          .chat-main__message-name{
+          &-name{
             font-size: 16px;
             font-weight: bold;
             color: $mainTextColor;
             float: left;
             padding: 6px 10px 0px 0px;
           }
-          .chat-main__message-time{
+          &-time{
             font-size: 12px;
             color: $mainSubTextColor;
             float: left;
           }
-          .chat-main__message-text{
+          &-text{
             font-size: 14px;
             color: $mainTextColor;
             clear: both;
           }
-          .chat-main__message-image{
+          &-image{
             clear: both;
           }
         }
@@ -90,9 +58,10 @@
       background-color: $mainBackColor;
       position: fixed;
       bottom: 0;
-      .chat-main__footer-form{
+      &-form{
         padding: 20px 40px;
         .chat-main__footer-body{
+          @include clearfix;
           position: relative;
           height: 50px;
           .message{
@@ -104,20 +73,19 @@
             margin-right: 15px;
             border: none;
             float: left;
-            label.upload{
-              height: 50px;
-              width: 50px;
-              float: left;
-              position: absolute;
-              top: 0;
-              right: 0;
-              line-height: 50px;
-            }
           }
+          .chat-main__footer-icon{
+              line-height: 50px;
+              float: left;
+              position:absolute;
+              right: 130px;
+              top: 0;
+              z-index: 1;
+            }
           .submit{
             height: 50px;
             width: 100px;
-            background-color: $footerbtnColor;
+            background-color: $btnColor;
             border: none;
             color: white;
             float: right;
