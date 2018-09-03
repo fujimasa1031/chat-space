@@ -47,9 +47,8 @@
           padding-bottom: 15px;
           input.chat-main__header--group-edit-btn{
             float: right;
-            margin: 0 20px;
             height: 40px;
-
+            width: 100px;
           }
           .chat-main__header--group-member{
             color: $mainSubTextColor;
@@ -87,18 +86,43 @@
       }
     }
     .chat-main__footer{
+      width: calc( 100vw - 300px );
       background-color: $mainBackColor;
       position: fixed;
       bottom: 0;
-      width: 100vw;
       .chat-main__footer-form{
-        @include clearfix;
-        width: 100vw;
-        margin: 0 40px;
-        .message{
-          font-size: 16px;
-          color: $mainTextColor;
-          margin-left: 10px;
+        padding: 20px 40px;
+        .chat-main__footer-body{
+          position: relative;
+          height: 50px;
+          .message{
+            width: calc(100% - 130px);
+            height: 50px;
+            font-size: 16px;
+            color: $mainTextColor;
+            padding: 0px 10px;
+            margin-right: 15px;
+            border: none;
+            float: left;
+            label.upload{
+              height: 50px;
+              width: 50px;
+              float: left;
+              position: absolute;
+              top: 0;
+              right: 0;
+              line-height: 50px;
+            }
+          }
+          .submit{
+            height: 50px;
+            width: 100px;
+            background-color: $footerbtnColor;
+            border: none;
+            color: white;
+            float: right;
+            position: absolute;
+          }
         }
       }
     }
