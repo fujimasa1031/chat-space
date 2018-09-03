@@ -1,0 +1,97 @@
+.wrapper{
+  @include clearfix;
+  .chat-main{
+    width: calc( 100vw - 300px );
+    height: 100vh;
+    float: left;
+    &__header{
+      border-bottom: 1px solid $mainBorderColor;
+      &--group{
+        padding: 35px 40px 0px;
+        &-name{
+          font-size: 20px;
+          color: $mainGroupColor;
+          padding-bottom: 15px;
+          .chat-main__header--group-edit-btn{
+            float: right;
+            height: 40px;
+            width: 100px;
+            color: $btnColor;
+            border: 1px solid $btnColor;
+          }
+        }
+        &-member{
+            color: $mainSubTextColor;
+            font-size: 12px;
+          }
+      }
+    }
+    .chat-main__messages{
+        .chat-main__message{
+          padding: 40px;
+          &-name{
+            font-size: 16px;
+            font-weight: bold;
+            color: $mainTextColor;
+            float: left;
+            padding: 6px 10px 0px 0px;
+          }
+          &-time{
+            font-size: 12px;
+            color: $mainSubTextColor;
+            float: left;
+          }
+          &-text{
+            font-size: 14px;
+            color: $mainTextColor;
+            clear: both;
+          }
+          &-image{
+            clear: both;
+          }
+        }
+      }
+
+    .chat-main__footer{
+      width: calc( 100vw - 300px );
+      background-color: $mainBackColor;
+      position: fixed;
+      bottom: 0;
+      &-form{
+        padding: 20px 40px;
+        &--body{
+          @include clearfix;
+          position: relative;
+          height: 50px;
+          &-message{
+            width: calc(100% - 130px);
+            height: 50px;
+            font-size: 16px;
+            color: $mainTextColor;
+            padding: 0px 10px;
+            margin-right: 15px;
+            border: none;
+            float: left;
+          }
+          &-icon{
+              line-height: 50px;
+              float: left;
+              position:absolute;
+              right: 130px;
+              top: 0;
+              z-index: 1;
+            }
+          .submit{
+            height: 50px;
+            width: 100px;
+            background-color: $btnColor;
+            border: none;
+            color: white;
+            float: right;
+            position: absolute;
+          }
+        }
+      }
+    }
+  }
+}
