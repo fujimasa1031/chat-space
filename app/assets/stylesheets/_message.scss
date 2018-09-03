@@ -27,7 +27,6 @@
       }
     }
     .chat-main__messages{
-      &-list{
         .chat-main__message{
           padding: 40px;
           &-name{
@@ -52,7 +51,7 @@
           }
         }
       }
-    }
+
     .chat-main__footer{
       width: calc( 100vw - 300px );
       background-color: $mainBackColor;
@@ -60,11 +59,11 @@
       bottom: 0;
       &-form{
         padding: 20px 40px;
-        .chat-main__footer-body{
+        &--body{
           @include clearfix;
           position: relative;
           height: 50px;
-          .message{
+          &-message{
             width: calc(100% - 130px);
             height: 50px;
             font-size: 16px;
@@ -74,7 +73,7 @@
             border: none;
             float: left;
           }
-          .chat-main__footer-icon{
+          &-icon{
               line-height: 50px;
               float: left;
               position:absolute;
