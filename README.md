@@ -23,7 +23,7 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - has_many :members
-- has_many :groups, though :members
+- has_many :groups, though: :members
 
 ## groups_table
 |Column|Type|Options|
@@ -33,7 +33,7 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - has_many :members
-- has_many :users, though :members
+- has_many :users, though: :members
 
 
 ## messages_table
@@ -48,11 +48,11 @@ Things you may want to cover:
 - belongs_to :user
 - belongs_to :group
 
-## menbers_table
+## members_table
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|group_id|references|null: false, foreign_key: true|
+|user_id|references|foreign_key: true|
+|group_id|references|foreign_key: true|
 
 ### Association
 - belongs_to :group
