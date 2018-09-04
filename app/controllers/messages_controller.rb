@@ -4,6 +4,7 @@ def index
 end
 
 def create
+  @message = Message.new
 end
 
 
