@@ -5,5 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :members
-  has_many :groups, though: :members
+  has_many :groups, foreign_key: :members
+
 end
