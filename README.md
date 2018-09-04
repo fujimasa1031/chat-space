@@ -23,7 +23,7 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - has_many :members
-- has_many :groups, though: :members
+- has_many :groups, through: :members
 
 ## groups_table
 |Column|Type|Options|
@@ -33,7 +33,7 @@ Things you may want to cover:
 ### Association
 - has_many :messages
 - has_many :members
-- has_many :users, though: :members
+- has_many :users, through: :members
 
 
 ## messages_table

@@ -13,18 +13,10 @@
 
   .chat-side__groups
     .chat-side__groups-list
-      .chat-side__group
-        .chat-side__group-name
-          Group1
-        .chat-side__group-message
-          Message
-      .chat-side__group
-        .chat-side__group-name
-          Group2
-        .chat-side__group-message
-          Message
-      .chat-side__group
-        .chat-side__group-name
-          Group3
-        .chat-side__group-message
-          Message
+      - current_user.groups.each do |group|
+        = link_to group_messages_path(group) do
+          .chat-side__group
+            .chat-side__group-name
+              = group.name
+            .chat-side__group-message
+              コメント
