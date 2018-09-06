@@ -1,0 +1,45 @@
+.footer{
+  width: calc( 100vw - 300px );
+  background-color: $mainBackColor;
+  position: fixed;
+  bottom: 0;
+  &__form{
+    padding: 20px 40px;
+    &--body{
+      @include clearfix;
+      position: relative;
+      height: 50px;
+      &-message{
+        width: calc(100% - 130px);
+        height: 50px;
+        font-size: 16px;
+        color: $mainTextColor;
+        padding: 0px 10px;
+        margin-right: 15px;
+        border: none;
+        float: left;
+      }
+      &-icon{
+          line-height: 50px;
+          float: left;
+          position:absolute;
+          right: 130px;
+          top: 0;
+          z-index: 1;
+          .hidden{
+            display: none;
+          }
+        }
+      .submit{
+        height: 50px;
+        width: 100px;
+        background-color: $btnColor;
+        border: none;
+        color: white;
+        float: right;
+        position: absolute;
+        cursor: pointer;
+      }
+    }
+  }
+}

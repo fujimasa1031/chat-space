@@ -15,7 +15,7 @@
       }
       .chat-side__icon{
         float: right;
-        font-size: 20px;
+        font-size: 25px;
         &--new-group{
           float:left;
         }
@@ -27,12 +27,18 @@
     .chat-side__groups{
       &-list{
         .chat-side__group{
+          display: block;
+          &:hover{
+            background-color: rgba(255,255,255,0.8);
+          }
           padding: 20px;
           &-name{
+            color: $WhiteColor;
             font-size: 15px;
             padding-bottom: 5px;
           }
           &-message{
+            color: $WhiteColor;
             font-size: 11px;
           }
         }
