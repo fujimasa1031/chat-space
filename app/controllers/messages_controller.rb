@@ -3,7 +3,7 @@ class MessagesController < ApplicationController
 before_action :set_group
 
 def index
-  @message = Message.all
+  @message = Message.find_by(params[:id])
   @messages = @group.messages.includes(:user)
 end
 
@@ -26,7 +26,7 @@ def message_params
 end
 
 def set_group
-    @group = Group.find(params[:group_id])
+    @group = Group.find_by(params[:group_id])
 end
 
 end
