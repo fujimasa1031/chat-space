@@ -2,5 +2,5 @@
   = render "shared/chat-side"
   .chat-main
     = render "shared/header"
-    = render @message
+    = render partial: "message", locals: {message: @messages}
     = render "shared/footer"
