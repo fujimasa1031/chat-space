@@ -11,7 +11,7 @@ include CarrierWave::MiniMagick
 
   # thumb バージョン(width 400px x height 200px)
   version :thumb do
-    process :resize_to_fit => [400, 200, "#ffffff", "Center"]
+    process :resize_to_limit => [100, 100]
   end
 
   # 許可する画像の拡張子
