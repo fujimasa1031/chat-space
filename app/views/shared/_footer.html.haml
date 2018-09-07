@@ -2,7 +2,7 @@
   .footer__form
     .footer__form--body
       = form_for [@group, @message], url: group_messages_path(@group) do |f|
-        = f.text_field :text, placeholder: 'type a message please', class: 'footer__form--body-message'
+        = f.text_field :text, class: 'footer__form--body-message', placeholder: 'type a message please'
         .footer__form--body-icon
           = f.label :image, class: 'form__mask__image' do
             = fa_icon 'picture-o', class: 'icon'
