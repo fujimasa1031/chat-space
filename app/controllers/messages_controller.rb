@@ -3,10 +3,10 @@ class MessagesController < ApplicationController
 before_action :set_group
 
 def index
-  @message = Message.find_by(params[:id])
+  @message = Message.new
+  @message = Message.find_by(id: params[:id])
   @messages = @group.messages.includes(:user)
 end
-
 
 
 def create
