@@ -1,12 +1,12 @@
-.chat-main__messages
-  - @messages.each do |message|
-    .chat-main__message
-      .chat-main__message-name
-        = message.user.name
-      .chat-main__message-time
-        = message.created_at
-      - if message.text.present?
-        .chat-main__message-text
-          = message.text
-        .chat-main__message-image
-          = image_tag message.image
+- @messages.each do |message|
+  .chat-main__message
+    .chat-main__message-name
+      = message.user.name
+    .chat-main__message-time
+      = message.created_at
+    - if message.text.present?
+      .chat-main__message-text
+        = message.text
+      .chat-main__message-image
+        = image_tag message.image
+

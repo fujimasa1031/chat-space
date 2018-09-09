@@ -1,10 +1,16 @@
+
+
 @import "./reset";
 @import "./variable";
 @import "font-awesome";
 @import "./mixin";
-@import "./message";
-@import "./chat-side";
-@import "./user";
 @import "./flash";
+
+
+// view_css
+@import "./chat-side";
+@import "./message";
 @import "./group";
-@import "./footer"
+@import "./footer";
+@import "./user";
+

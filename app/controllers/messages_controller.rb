@@ -7,6 +7,8 @@ def index
   @messages = @group.messages.includes(:user)
 end
 
+
+
 def create
   @message = @group.messages.new(message_params)
   if @message.save
@@ -26,7 +28,7 @@ def message_params
 end
 
 def set_group
-    @group = Group.find_by(params[:group_id])
+    @group = Group.find_by(id: params[:group_id])
 end
 
 end

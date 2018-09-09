@@ -1,9 +1,10 @@
-.chat-main__header
-  .chat-main__header--group
-    .chat-main__header--group-name
-      = @group.name
-      %input.chat-main__header--group-edit-btn{:type => "submit", :value => "Edit"}
-    .chat-main__header--group-member
-      -@group.members.each do |member|
-        =member.user.name + " | "
+
+.chat-main__header--group
+  .chat-main__header--group-name
+    = @group.name
+    %input.chat-main__header--group-edit-btn{:type => "submit", :value => "Edit"}
+  .chat-main__header--group-member
+    Member:
+    -@group.members.each do |member|
+      =member.user.name + " | "
 
