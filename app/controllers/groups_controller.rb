@@ -37,7 +37,7 @@ before_action :set_group, only: [:edit, :update]
   end
 
   def set_group
-    @group = Group.find_by(params[:id])
+    @group = Group.find_by(id: params[:id])
   end
 
 end

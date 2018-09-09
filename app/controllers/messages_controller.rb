@@ -4,14 +4,12 @@ before_action :set_group
 
 def index
   @message = Message.find_by(params[:id])
-  @group = Group.find_by(params[:group_id])
   @messages = @group.messages.includes(:user)
 end
 
 
 
 def create
-  @group = Group.find_by(params[:group_id])
   @message = @group.messages.new(message_params)
   if @message.save
     redirect_to group_messages_path(@group), notice: "メッセージ送信が完了しました"
@@ -30,7 +28,7 @@ def message_params
 end
 
 def set_group
-    @group = Group.find_by(params[:group_id])
+    @group = Group.find_by(id: params[:group_id])
 end
 
 end
