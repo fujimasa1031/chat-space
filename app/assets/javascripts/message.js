@@ -1,16 +1,18 @@
 $(function(){
   // コメント出力関数の定義
-  function buildHTML(message){
-    var html = `
+function buildHTML(message){
 
-                `
-    return html;
-  }
+var html = `
+<div class="chat-main__message-name">${message.user.name}</div>
+<div class="chat-main__message-time">${message.created_at}</div>
+<div class="chat-main__message-text">${message.text}</div>
+<div class="chat-main__message-image">${message.image}</div>`
 
+return html;
+}
   // 送信ボタンクリック時にイベント発火
-  $('#new_message').on('submit',function(e){
+  $('.new_message').on('submit',function(e){
     e.preventDefault();
-
   // formDataでフォーム情報取得
     var formData = new FormData(this);
   // 非同期通信でコメント保存
@@ -27,7 +29,7 @@ $(function(){
   .done(function(data){
     var html = buildHTML(data);
     $('.chat-main__message').append(html)
-    $('#').val('')
+    $('.footer__form--body-message').val('')
   })
   // エラー処理
   .fail(function(){
@@ -35,3 +37,5 @@ $(function(){
   })
   });
 });
+
+
