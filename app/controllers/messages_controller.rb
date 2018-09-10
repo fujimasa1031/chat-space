@@ -11,13 +11,19 @@ end
 
 def create
   @message = @group.messages.new(message_params)
-  if @message.save
-    redirect_to group_messages_path(@group), notice: "メッセージ送信が完了しました"
-  else
-    @messages = @group.messages.includes(:user)
-    flash[:alert] = "メッセージを入力してください"
-    render :index
+  # if @message.save
+  #   redirect_to group_messages_path(@group), notice: "メッセージ送信が完了しました"
+  # else
+  #   @messages = @group.messages.includes(:user)
+  #   flash[:alert] = "メッセージを入力してください"
+  #   render :index
+  # end
+
+  respond_to do |format|
+      format.html
+      format.json
   end
+
 end
 
 
