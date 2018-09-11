@@ -12,12 +12,16 @@ end
 def create
   @message = @group.messages.new(message_params)
   if @message.save
-    redirect_to group_messages_path(@group), notice: "メッセージ送信が完了しました"
+    respond_to do |format|
+        format.html{ redirect_to group_messages_path(@group), notice: "メッセージ送信が完了しました" }
+        format.json{ render 'create.json.jbuilder' }
+    end
   else
     @messages = @group.messages.includes(:user)
     flash[:alert] = "メッセージを入力してください"
     render :index
   end
+
 end
 
 
