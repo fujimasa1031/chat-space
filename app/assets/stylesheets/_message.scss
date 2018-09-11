@@ -28,7 +28,8 @@
       }
     }
     .chat-main__messages{
-      overflow: auto;
+      overflow: scroll;
+      height: calc(100vh -  95px - 90px);
         .chat-main__message{
           padding: 40px;
           &-name{
