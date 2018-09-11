@@ -13,8 +13,8 @@ def create
   @message = @group.messages.new(message_params)
   if @message.save
     respond_to do |format|
-        format.html{redirect_to group_messages_path(@group), notice: "メッセージ送信が完了しました" }
-        format.json
+        format.html{ redirect_to group_messages_path(@group), notice: "メッセージ送信が完了しました" }
+        format.json{ render 'create.json.jbuilder' }
     end
   else
     @messages = @group.messages.includes(:user)

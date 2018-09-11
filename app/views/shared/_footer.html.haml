@@ -1,10 +1,11 @@
-.footer__form
-  - @message = Message.new unless @message
-  .footer__form--body
-    = form_for [@group, @message],html: {class: "new_message"} do |f|
-      = f.text_field :text, class: 'footer__form--body-message', placeholder: 'type a message please'
-      .footer__form--body-icon
-        = f.label :image, class: 'form__mask__image' do
-          = fa_icon 'picture-o', class: 'icon'
-          = f.file_field :image, class: 'hidden'
-      = f.submit 'Send', class: 'submit'
+.footer
+  .footer__form
+    - @message = Message.new unless @message
+    .footer__form--body
+      = form_for [@group, @message],id: "new_message" do |f|
+        = f.text_field :text, class: 'footer__form--body-message', placeholder: 'type a message please'
+        .footer__form--body-icon
+          = f.label :image, class: 'form__mask__image' do
+            = fa_icon 'picture-o', class: 'icon'
+            = f.file_field :image, class: 'hidden'
+        = f.submit 'Send', class: 'submit'

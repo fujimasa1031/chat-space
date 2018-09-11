@@ -1,17 +1,29 @@
 $(function(){
   // コメント出力関数の定義
 function buildHTML(message){
+  var img = message.image? `<img src=${message.image}>` : ""
+  var html = `<div class="chat-main__message-name">
+                  ${message.user_name}
+                </div>
+                <div class="chat-main__message-time">
+                  ${message.created_at}
+                </div>
+                <div class="chat-main__message-text">
+                  ${ message.text }
+                <div>
+                 <div class="chat-main__message-image">
+                  ${ img }
+                </div>`
+  return html;
+  }
 
-var html = `
-<div class="chat-main__message-name">${message.user.name}</div>
-<div class="chat-main__message-time">${message.created_at}</div>
-<div class="chat-main__message-text">${message.text}</div>
-<div class="chat-main__message-image">${message.image}</div>`
+  // 投稿完了の際に一番下までスクロール
+  function scrollBottom(){
+    $('.chat-main__messages').animate({scrollTop: $('.chat-main__messages').height()},'swing');
+  }
 
-return html;
-}
   // 送信ボタンクリック時にイベント発火
-  $('.new_message').on('submit',function(e){
+  $('#new_message').on('submit',function(e){
     e.preventDefault();
   // formDataでフォーム情報取得
     var formData = new FormData(this);
@@ -33,8 +45,9 @@ return html;
   })
   // エラー処理
   .fail(function(){
-    alert('error');
+    alert('送信に失敗しました');
   })
+  scrollBottom();
   });
 });
 
