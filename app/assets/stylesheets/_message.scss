@@ -19,6 +19,10 @@
             width: 100px;
             color: $btnColor;
             border: 1px solid $btnColor;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            line-height: 40px;
           }
         }
         &-member{
