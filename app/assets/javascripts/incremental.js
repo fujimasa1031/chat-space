@@ -52,5 +52,10 @@ function addMember(userId,userName){
       $(this).parent().remove();
   });
 
+// チャットメンバーからの削除
+  $(document).on('click','.chat-group-user__btn--remove',function(){
+      $(this).parent().remove();
+  });
+
 
 });
