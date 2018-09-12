@@ -7,11 +7,4 @@
 
 
 
-  .chat-group-form__field.clearfix
-    .chat-group-form__field--left
-      %label.chat-group-form__label{:for => "chat_group_チャットメンバー"} チャットメンバー
-    .chat-group-form__field--right
-      .chat-group-user.clearfix
-      - group.users.each do |user|
-        %input{ name: "chat_group[user_ids][]", type: 'hidden', value: user.id}
-        %p.chat-group-user__name
+
