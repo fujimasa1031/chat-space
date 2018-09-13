@@ -26,13 +26,15 @@
       = f.label "チャットメンバー", class: "chat-group-form__label"
     .chat-group-form__field--right
       .chat-group-users
+        .chat-group-user
         - group.users.each do |user|
           .chat-group-user
             = f.text_field :members, name: "chat_group[user_ids][]", type: 'hidden', value: user.id
             .chat-group-user__name
               = user.name
-            %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
-              削除
+              - if user.name != current_user.name
+                %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn
+                  削除
 
 
   .chat-group-form__field.clearfix
