@@ -1,35 +1,31 @@
 $(function(){
-  // コメント出力関数の定義
-function buildHTML(message){
-  var img = message.image? `<img src=${message.image}>` : ""
-  var html = `<div class="chat-main__message">
-                <div class="chat-main__message-name">
-                  ${message.user_name}
-                </div>
-                <div class="chat-main__message-time">
-                  ${message.created_at}
-                </div>
-                <div class="chat-main__message-text">
-                  ${ message.text }
-                <div>
-                 <div class="chat-main__message-image">
-                  ${ img }
-                </div>
-              </div>`
-  return html;
+
+  function buildHTML(message){
+    var img = message.image? `<img src=${message.image}>` : ""
+    var html = `<div class="chat-main__message" data-message-id="${message.id}">
+                  <div class="chat-main__message-name">
+                    ${message.user_name}
+                  </div>
+                  <div class="chat-main__message-time">
+                    ${message.created_at}
+                  </div>
+                  <div class="chat-main__message-text">
+                    ${ message.text }
+                  <div>
+                   <div class="chat-main__message-image">
+                    ${ img }
+                  </div>
+                </div>`
+    return html;
   }
-  //投稿後にページ最下部まで自動スクロールする
+
   function scrollBottom(){
     $('.chat-main__messages').animate({scrollTop: $('.chat-main__messages')[0].scrollHeight},"fast");
   }
 
-
-  // 送信ボタンクリック時にイベント発火
   $('#new_message').on('submit',function(e){
     e.preventDefault();
-  // formDataでフォーム情報取得
     var formData = new FormData(this);
-  // 非同期通信でコメント保存
     var url = $(this).attr('action')
     $.ajax({
       url: url,
@@ -39,39 +35,41 @@ function buildHTML(message){
       processData: false,
       contentType: false
     })
-  // 非同期成功時に定義した関数の実行
   .done(function(data){
     var html = buildHTML(data);
     $('.chat-main__messages').append(html)
     $('.footer__form--body-message').val("")
+    $(".submit").removeAttr("disabled")
     $('.hidden').val('')
   })
-  // エラー処理
   .fail(function(){
     alert('送信に失敗しました');
-    })
-  // 2回目のイベント発火が無効になるのをふせぐ
-  .always(function(){
-    $(".submit").removeAttr("disabled");
-   });
+    });
+
   scrollBottom();
   });
-  // 自動更新
-  .setInterval(function() {
+
+  var interval = setInterval(function() {
+      if (window.location.href.match(/\/groups\/\d+\/messages/)) {
     $.ajax({
       url: location.href.json,
-      ataType: 'json',
-      processData: false,
-      contentType: false
     })
-    .done(function(data) {
+    .done(function(json) {
+      var id = $('.chat-main__message:last').data('message-id');
+      json.messages.forEach(function(message){
+        if (message.id > id ) {
+          var newHTML = buildHTML(message);
+          $('.chat-main__messages').append(newHTML);
+        }
+      });
     })
-    .fail(function(data) {
+    .fail(function(json) {
+      alert('自動更新に失敗しました');
     });
   } else {
     clearInterval(interval);
-   } , 5000 );
-  });
+   }} , 5000 );
+
 
 });
 
