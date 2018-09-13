@@ -56,6 +56,23 @@ function buildHTML(message){
    });
   scrollBottom();
   });
+  // 自動更新
+  .setInterval(function() {
+    $.ajax({
+      url: location.href.json,
+      ataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(data) {
+    })
+    .fail(function(data) {
+    });
+  } else {
+    clearInterval(interval);
+   } , 5000 );
+  });
+
 });
 
 

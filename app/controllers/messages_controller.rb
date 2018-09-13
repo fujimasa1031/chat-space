@@ -6,6 +6,10 @@ def index
   @message = Message.new
   @message = Message.find_by(id: params[:id])
   @messages = @group.messages.includes(:user)
+  respond_to do |format|
+    format.html
+    format.json
+  end
 end
 
 
