@@ -53,6 +53,7 @@ $(function(){
       if (window.location.href.match(/\/groups\/\d+\/messages/)) {
     $.ajax({
       url: location.href.json,
+      dataType: 'json'
     })
     .done(function(json) {
       var id = $('.chat-main__message:last').data('message-id');
@@ -60,6 +61,7 @@ $(function(){
         if (message.id > id ) {
           var newHTML = buildHTML(message);
           $('.chat-main__messages').append(newHTML);
+          scrollBottom();
         }
       });
     })
@@ -68,7 +70,7 @@ $(function(){
     });
   } else {
     clearInterval(interval);
-   }} , 5000 );
+   }} , 2500 );
 
 
 });
