@@ -71,8 +71,4 @@ $(function(){
   } else {
     clearInterval(interval);
    }} , 2500 );
-
-
 });
-
-
