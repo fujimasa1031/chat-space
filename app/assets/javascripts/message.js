@@ -73,26 +73,47 @@ $(function(){
   //   clearInterval(interval);
   //  }} , 5000 );
 
-  $(function(){
-    setInterval(update, 2500);
-  });
-  function update(){
+  // $(function(){
+  //   setInterval(update, 2500);
+  // });
+  // function update(){
+  //   if($('.chat-main__message')[0]){
+  //     var lastId = $('.chat-main__message:last').data('message-id');
+  //   }else{
+  //     var lastId = 0
+  //   }
+  //   $.ajax({
+  //     url: location.href,
+  //     data: {message: {id: lastId}},
+  //     dataType: 'json'
+  //   })
+  //   .always(function(data){
+  //     $.each(data,function(i,data){
+  //       var newHTML = buildHTML(data);
+  //       $('.chat-main__messages').append(newHTML);
+  //       scrollBottom();
+  //     });
+  //   });
+  // }
+
+var update = setInterval(function() {
     if($('.chat-main__message')[0]){
       var lastId = $('.chat-main__message:last').data('message-id');
-    }else{
-      var lastId = 0
-    }
-    $.ajax({
+      $.ajax({
       url: location.href,
-      data: { message: {id: lastId}},
+      data: {message: {id: lastId}},
       dataType: 'json'
     })
-    .always(function(data){
+    .done(function(data){
       $.each(data,function(i,data){
         var newHTML = buildHTML(data);
         $('.chat-main__messages').append(newHTML);
         scrollBottom();
       });
     });
-  }
+  }else{
+      var lastId = 0
+      clearInterval(update);
+    }
+  }, 2500 );
 });
