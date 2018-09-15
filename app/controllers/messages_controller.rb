@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     @messages = @group.messages.includes(:user)
     respond_to do |format|
       format.html
-      format.json  { @new_messages = @group.messages.includes(:user).where('id > ?', params[:message][:id]) }
+      format.json  { @new_messages = @messages.where('id > ?', params[:id]) }
     end
   end
 
@@ -16,7 +16,7 @@ class MessagesController < ApplicationController
     if @message.save
       respond_to do |format|
           format.html{ redirect_to group_messages_path(@group), notice: "メッセージ送信が完了しました" }
-          format.json{ render 'create.json.jbuilder' }
+          format.json
       end
     else
       @messages = @group.messages.includes(:user)
@@ -31,6 +31,6 @@ class MessagesController < ApplicationController
   end
 
   def set_group
-      @group = Group.find_by(id: params[:group_id])
+      @group = Group.find(params[:group_id])
   end
 end

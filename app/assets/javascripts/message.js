@@ -48,7 +48,8 @@ $(document).on('turbolinks:load', function() {
 
     scrollBottom();
     });
-  // 最初に書いたコード
+
+  // patarn1:最初に書いたコード(戻す場合はcontroller/jbuilderの修正が必要)
   // var interval = setInterval(function() {
   //   var id = $('.chat-main__message:last').data('message-id');
   //   if (window.location.href.match(/\/groups\/\d+\/messages/)) {
@@ -73,6 +74,7 @@ $(document).on('turbolinks:load', function() {
   //   clearInterval(interval);
   //  }} , 5000 );
 
+  // patarn2:チャレンジコード
   // $(function(){
   //   setInterval(update, 2500);
   // });
@@ -96,12 +98,13 @@ $(document).on('turbolinks:load', function() {
   //   });
   // }
 
+  // patarn3:チャレンジコード
   var update = setInterval(function() {
       if($('.chat-main__message')[0]){
         var lastId = $('.chat-main__message:last').data('message-id');
         $.ajax({
         url: location.href,
-        data: {message: {id: lastId}},
+        data: {id: lastId},
         dataType: 'json'
       })
       .done(function(data){
@@ -116,5 +119,6 @@ $(document).on('turbolinks:load', function() {
         clearInterval(update);
       }
     }, 2500 );
+
   });
 });
