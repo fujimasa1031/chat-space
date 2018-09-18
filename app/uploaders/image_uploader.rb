@@ -9,7 +9,7 @@ include CarrierWave::MiniMagick
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-  # thumb バージョン(width 400px x height 200px)
+  # thumb バージョン(width x height )
   version :thumb do
     process :resize_to_limit => [100, 100]
   end
